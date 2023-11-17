@@ -33,7 +33,7 @@ def dhcp_callback(packet):
            print("Gateway: {}".format(packet[BOOTP].siaddr))
            print("Subnet Mask: {}".format(packet[DHCP].options[1][1]))
 
-sniff(filter="udp and (port 67 or 68)", prn=dhcp_callback, store=0)
+    sniff(filter="udp and (port 67 or 68)", prn=dhcp_callback, store=0)
 
 #syn_scan
 def syn_scan(ip_range,port_range):
